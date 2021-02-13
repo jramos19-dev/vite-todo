@@ -1,11 +1,14 @@
 <template>
-  <header class="flex flex-col w-full container">
-    <Title msg="🚀 My To Do App 🚀" />
+<header class="flex flex-col w-full container">
+    <Title msg="🐱‍👤 Jorge's Todo App 🐱‍👤" />
     <NewTodo />
-  </header>
+</header>
+
 </template>
 
+
 <script setup>
+
 import Title from './Title.vue'
 import NewTodo from './NewTodo.vue'
 </script>

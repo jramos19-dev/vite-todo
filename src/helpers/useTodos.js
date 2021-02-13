@@ -1,32 +1,37 @@
-import { ref, computed } from 'vue'
+import {ref,computed}from 'vue'
 
-export const newTodo = ref('')
 
-const todos = ref([])
+export const  newTodo = ref('')
 
-export const pendingTodos = computed(() =>
-  todos.value.filter(todo => todo.status === 'pending'),
+ const todos = ref([])
+
+
+export const pending = computed(()=>
+  todos.value.filter(todo => todo.status ==='pending'),
 )
 
-export const completedTodos = computed(() =>
-  todos.value.filter(todo => todo.status === 'done'),
+
+export const completed = computed(()=>
+  todos.value.filter(todo => todo.status ==='completed'),
 )
 
-export const changeStatus = id => {
-  todos.value.map(todo => {
-    if (todo.id === id) {
-      todo.status = todo.status === 'pending' ? 'done' : 'pending'
-    }
+
+export const changestatus= id =>{
+  todos.value.map(todo=>{
+    if(todo.id===id){
+    todo.status = todo.status ==='pending'? 'completed': 'pending'}
   })
 }
 
-export const addTodo = () => {
-  if (newTodo.value.length > 0) {
+export const addTodo = ()=> {
+  if(newTodo.value.length >0 ){
     todos.value.push({
-      id: todos.value.length,
-      text: newTodo.value,
-      status: 'pending',
+      id:todos.value.length,
+      text:newTodo.value,
+      status:'pending'
     })
-    newTodo.value = ''
+
+    newTodo.value= ''
   }
+
 }

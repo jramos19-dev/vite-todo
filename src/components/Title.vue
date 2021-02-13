@@ -1,11 +1,12 @@
 <template>
-  <h1 class="text-6xl font-light text-gray-800 text-center">
-    {{ msg }}
+  <h1 class="text-6xl font-light text-red-800 text-center"> 
+  {{msg}}
   </h1>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+
+import {defineProps}from 'vue'
 
 defineProps({
   msg: {
@@ -13,4 +14,6 @@ defineProps({
     default: 'Custom Title',
   },
 })
+
 </script>
+
